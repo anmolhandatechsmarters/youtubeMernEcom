@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Navigation from "./Customer/Components/Navbar/Navigation";
 import HomePage from "./Customer/Pages/HomePage/HomePage";
@@ -9,7 +7,9 @@ import Footer from "./Customer/Components/Footer/Footer";
 import ProductsDetails from "./Customer/Components/ProductDetails/ProductDetails";
 import Cart from "./Customer/Components/Cart/Cart";
 import Checkout from "./Customer/Components/Checkout/Checkout";
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Order from "./Customer/Components/Order/Order";
+import OrderDetail from "./Customer/Components/Order/OrderDetail";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -22,7 +22,15 @@ function App() {
           {/* <Product/> */}
         {/* <ProductsDetails/> */}
         {/* <Cart/> */}
-        <Checkout/>
+        {/* <Router>
+      <Routes>
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
+    </Router> */}
+   {/* <Order/> */}
+
+
+<OrderDetail/>
         </div>
 
         <Footer/>
