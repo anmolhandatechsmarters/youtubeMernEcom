@@ -6,6 +6,9 @@ import Navigation from "./Customer/Components/Navbar/Navigation";
 import HomePage from "./Customer/Pages/HomePage/HomePage";
 import Product from "./Customer/Components/Product/Product";
 import Footer from "./Customer/Components/Footer/Footer";
+import ProductsDetails from "./Customer/Components/ProductDetails/ProductDetails";
+import Cart from "./Customer/Components/Cart/Cart";
+import Checkout from "./Customer/Components/Checkout/Checkout";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,7 +19,10 @@ function App() {
         <Navigation style={{zIndex:"99px"}}/>
         <div>
           {/* <HomePage/> */}
-          <Product/>
+          {/* <Product/> */}
+        {/* <ProductsDetails/> */}
+        {/* <Cart/> */}
+        <Checkout/>
         </div>
 
         <Footer/>
