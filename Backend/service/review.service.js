@@ -16,11 +16,11 @@ async function createReview(reqData,user){
 }
 
 
-async function getAdllReview(productId){
+async function getAllReview(productId){
     const product = await productService.findProductById(reqData.productId);
     return Review.find({product:productId}).populate("user");
 }
 
 module.exports={
-    createReview,getAdllReview
+    createReview,getAllReview
 }
