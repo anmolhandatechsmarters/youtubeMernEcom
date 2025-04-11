@@ -3,7 +3,7 @@ const ratingService=require("../service/rating.service")
 
 
 const createRating =async(req,res)=>{
-    const user= req.user
+    const user=await req.user
     try{
         const rating =await ratingService.createRating(req.body,user)
         return res.status(200).send(rating)
@@ -13,7 +13,7 @@ const createRating =async(req,res)=>{
 }
 
 const getAllReview =async(req,res)=>{
-    const productId=req.params.productId
+    const productId=await req.params.productId
     try{
         const rating =await ratingService.getProductRating(productId)
         return res.status(200).send(rating)

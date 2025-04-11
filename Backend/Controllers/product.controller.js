@@ -11,7 +11,7 @@ const createPrdouct=async(req,res)=>{
 
 
 const deletePrdouct=async(req,res)=>{
-    const productId=req.params.id
+    const productId= await req.params.id
     try{
         const product= await productService.deleteProduct(req.body)
         return res.status(201).send({message:"Delete Product Succefully"})
@@ -21,7 +21,7 @@ const deletePrdouct=async(req,res)=>{
 }
 
 const updatePrdouct=async(req,res)=>{
-    const productId=req.params.id
+    const productId=await req.params.id
     try{
         const product= await productService.UpdateProduct(req.body)
         return res.status(201).send({message:"Update Product Succefully"})
@@ -31,7 +31,7 @@ const updatePrdouct=async(req,res)=>{
 }
 
 const findProductById=async(req,res)=>{
-    const productId=req.params.id
+    const productId=await req.params.id
     try{
         const product= await productService.findProductById(req.body)
         return res.status(201).send(product)
@@ -42,7 +42,7 @@ const findProductById=async(req,res)=>{
 
 
 const getAllProduct=async(req,res)=>{
-    const productId=req.params.id
+    const productId=await req.params.id
     try{
         const product=await productService.getAllProducts(req.query)
         return res.status(200).send(product)
@@ -52,7 +52,7 @@ const getAllProduct=async(req,res)=>{
 }
 
 const createMultipleProducts=async(req,res)=>{
-    const productId=req.params.id;
+    const productId=await req.params.id;
     try{
             const product = await productService.createMultipleProducts(req.body)
             return res.status(200).send({message:"Product created Succefully"})
